@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 spring:
   application:
     name: config-client
@@ -26,4 +26,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*" # refresh
+        include: "*"

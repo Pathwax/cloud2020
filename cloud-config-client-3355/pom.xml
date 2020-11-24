@@ -12,6 +12,10 @@
     <artifactId>cloud-config-client-3355</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-kafka</artifactId>
+        </dependency>
         <!-- config Client 和 服务端的依赖不一样 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
