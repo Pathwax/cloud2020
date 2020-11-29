@@ -1,0 +1,26 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: cloud-stream-consumer
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zk-nodes: localhost:2181
+          auto-create-topics: true
+      bindings:
+        #input是接收，注意这里不能再像前面一样写output了
+        input:
+          destination: studyExchange
+          content-type: application/json
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 2 # 设置心跳时间，默认是30秒
+    lease-expiration-duration-in-seconds: 5 # 最大心跳间隔不能超过5秒,默认90秒
+    instance-id: receive-8802.com # 在信息列表显示主机名称
+    prefer-ip-address: true # 访问路径变为ip地址
